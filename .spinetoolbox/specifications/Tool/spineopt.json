@@ -1,0 +1,18 @@
+{
+    "name": "spineopt",
+    "tooltype": "julia",
+    "includes": [
+        "spineopt.jl",
+        "spineoptsssss.json",
+        "cccc/vvvv",
+        "cccc/bdfbdf",
+        "cccc/iokju"
+    ],
+    "description": "Runs the spine opt using gurobi.",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [],
+    "cmdline_args": [],
+    "execute_in_work": false,
+    "includes_main_path": "."
+}

@@ -1,0 +1,494 @@
+{
+    "project": {
+        "version": 6,
+        "name": "CS_C2",
+        "description": "",
+        "specifications": {
+            "Tool": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/n490.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/spineopt.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/fractional_p_wind.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/plts.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/unit_plt.json"
+                }
+            ],
+            "Importer": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Importer/importer_1_-_n490.xlsx_-_max.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Importer/fractional_demand.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Importer/wind_ts_alt.json"
+                }
+            ]
+        },
+        "connections": [
+            {
+                "from": [
+                    "Importer 1",
+                    "right"
+                ],
+                "to": [
+                    "input",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "template",
+                    "right"
+                ],
+                "to": [
+                    "input",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Load template 1",
+                    "right"
+                ],
+                "to": [
+                    "template",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "input",
+                    "right"
+                ],
+                "to": [
+                    "SpineOpt",
+                    "left"
+                ],
+                "resource_filters": {
+                    "db_url@input": {
+                        "scenario_filter": [
+                            1
+                        ]
+                    }
+                }
+            },
+            {
+                "from": [
+                    "N490",
+                    "bottom"
+                ],
+                "to": [
+                    "frac_demand",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "N490",
+                    "right"
+                ],
+                "to": [
+                    "Importer 1",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "wind_scenarios",
+                    "right"
+                ],
+                "to": [
+                    "Importer 2",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "frac_demand",
+                    "right"
+                ],
+                "to": [
+                    "Importer 3",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Importer 3",
+                    "right"
+                ],
+                "to": [
+                    "input",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Importer 2",
+                    "right"
+                ],
+                "to": [
+                    "input",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "SpineOpt",
+                    "bottom"
+                ],
+                "to": [
+                    "output",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "output",
+                    "bottom"
+                ],
+                "to": [
+                    "Exporter 1",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Exporter 1",
+                    "right"
+                ],
+                "to": [
+                    "plot1",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "output",
+                    "bottom"
+                ],
+                "to": [
+                    "Exporter 2",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Exporter 2",
+                    "right"
+                ],
+                "to": [
+                    "plot2",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "invest",
+                    "bottom"
+                ],
+                "to": [
+                    "input",
+                    "left"
+                ]
+            }
+        ]
+    },
+    "items": {
+        "input": {
+            "type": "Data Store",
+            "description": "",
+            "x": 24.17557657742647,
+            "y": -54.012734564635,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/input/input.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "output": {
+            "type": "Data Store",
+            "description": "",
+            "x": 231.27353885197445,
+            "y": 32.58107230873894,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/output/output.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "template": {
+            "type": "Data Store",
+            "description": "",
+            "x": -184.24423526799944,
+            "y": -221.86656321402268,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/template/template.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "small system": {
+            "type": "Data Store",
+            "description": "",
+            "x": 154.96508030660462,
+            "y": -224.25426696471334,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/small_system/small system.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "invest": {
+            "type": "Data Store",
+            "description": "",
+            "x": -32.4870460610158,
+            "y": -248.43860700934556,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/invest/invest.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "wind_scenarios": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -317.7997646621622,
+            "y": 163.88167925857704,
+            "references": []
+        },
+        "N490": {
+            "type": "Tool",
+            "description": "",
+            "x": -403.79859410280324,
+            "y": -102.45001643723282,
+            "specification": "n490",
+            "execute_in_work": false,
+            "cmd_line_args": []
+        },
+        "SpineOpt": {
+            "type": "Tool",
+            "description": "",
+            "x": 173.14096752629217,
+            "y": -65.55957686872497,
+            "specification": "spineopt",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@input"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@output"
+                }
+            ],
+            "options": {
+                "julia_sysimage": ""
+            }
+        },
+        "Load template 1": {
+            "type": "Tool",
+            "description": "",
+            "x": -323.7131995753212,
+            "y": -220.48422454355642,
+            "specification": "Load template",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@template"
+                }
+            ]
+        },
+        "frac_demand": {
+            "type": "Tool",
+            "description": "",
+            "x": -300.47831339074935,
+            "y": 29.061771964477913,
+            "specification": "fractional_p_wind",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "N490.xlsx"
+                }
+            ]
+        },
+        "plot1": {
+            "type": "Tool",
+            "description": "",
+            "x": 388.29859410280324,
+            "y": 153.2235263587867,
+            "specification": "plts",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "avg_through_flow.csv"
+                }
+            ]
+        },
+        "plot2": {
+            "type": "Tool",
+            "description": "",
+            "x": 374.8192618155739,
+            "y": 252.43860700934556,
+            "specification": "unit_plt",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "unit_flow.csv"
+                }
+            ]
+        },
+        "Importer 1": {
+            "type": "Importer",
+            "description": "",
+            "x": -183.76872969516873,
+            "y": -100.95628228720776,
+            "specification": "Importer 1 - N490.xlsx - max",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    "N490.xlsx",
+                    true
+                ]
+            ]
+        },
+        "Importer 2": {
+            "type": "Importer",
+            "description": "",
+            "x": -182.58378030830158,
+            "y": 150.36601626495468,
+            "specification": "wind_ts_alt",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    "scenarios.xlsx",
+                    true
+                ]
+            ]
+        },
+        "Importer 3": {
+            "type": "Importer",
+            "description": "",
+            "x": -182.6259090454724,
+            "y": 16.513230584008042,
+            "specification": "fractional_demand",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    "frac_demand.xlsx",
+                    true
+                ]
+            ]
+        },
+        "Exporter 1": {
+            "type": "Exporter",
+            "description": "",
+            "x": 282.5440444501567,
+            "y": 148.13347083048816,
+            "databases": [
+                {
+                    "output_file_name": "avg_through_flow.csv",
+                    "database_url": {
+                        "type": "file_url",
+                        "relative": true,
+                        "path": ".spinetoolbox/items/output/output.sqlite",
+                        "scheme": "sqlite"
+                    }
+                }
+            ],
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "specification": "unit_flow"
+        },
+        "Exporter 2": {
+            "type": "Exporter",
+            "description": "",
+            "x": 282.4519384946525,
+            "y": 248.6391561618847,
+            "databases": [
+                {
+                    "output_file_name": "unit_flow.csv",
+                    "database_url": {
+                        "type": "file_url",
+                        "relative": true,
+                        "path": ".spinetoolbox/items/output/output.sqlite",
+                        "scheme": "sqlite"
+                    }
+                }
+            ],
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "specification": "unit_flow"
+        }
+    }
+}

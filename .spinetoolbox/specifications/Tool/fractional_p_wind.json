@@ -1,0 +1,16 @@
+{
+    "name": "fractional_p_wind",
+    "tooltype": "python",
+    "includes": [
+        "fractional_p_wind.py"
+    ],
+    "description": "",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [
+        "frac_demand.xlsx"
+    ],
+    "cmdline_args": [],
+    "execute_in_work": true,
+    "includes_main_path": "../../.."
+}

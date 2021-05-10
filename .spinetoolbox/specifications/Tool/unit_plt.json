@@ -1,0 +1,14 @@
+{
+    "name": "unit_plt",
+    "tooltype": "julia",
+    "includes": [
+        "plot_unit.jl"
+    ],
+    "description": "",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [],
+    "cmdline_args": [],
+    "execute_in_work": false,
+    "includes_main_path": "../../.."
+}

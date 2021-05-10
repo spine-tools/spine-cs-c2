@@ -1,0 +1,16 @@
+{
+    "name": "n490",
+    "tooltype": "python",
+    "includes": [
+        "read_data.py"
+    ],
+    "description": "Generates the N490 dataset",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [
+        "N490.xlsx"
+    ],
+    "cmdline_args": [],
+    "execute_in_work": false,
+    "includes_main_path": "../../../../../../../iasonas-spatial-disaggregation"
+}
