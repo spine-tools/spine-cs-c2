@@ -3,7 +3,7 @@ using SpineOpt
 using Gurobi
 using JuMP
 using Cbc
-optimizer = optimizer_with_attributes(Gurobi.Optimizer, "OutputFlag" => 0)
+optimizer = optimizer_with_attributes(Gurobi.Optimizer, "OutputFlag" => 0, "MIPGap" => 1e-2)
 m = run_spineopt(ARGS...; mip_solver=optimizer, lp_solver=optimizer)
 # m = run_spineopt(ARGS...)
 
