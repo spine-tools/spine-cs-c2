@@ -47,6 +47,13 @@
                     "relative": true,
                     "path": ".spinetoolbox/specifications/Importer/wind_ts_alt.json"
                 }
+            ],
+            "Exporter": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Exporter/pivoted.json"
+                }
             ]
         },
         "connections": [
