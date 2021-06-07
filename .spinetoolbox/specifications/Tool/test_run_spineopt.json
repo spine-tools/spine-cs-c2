@@ -1,0 +1,14 @@
+{
+    "name": "test run_spineopt",
+    "tooltype": "julia",
+    "includes": [
+        "run_mini_example.jl"
+    ],
+    "description": "",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [],
+    "cmdline_args": [],
+    "execute_in_work": true,
+    "includes_main_path": "../../../../../SpineProjects/DocumentationTester"
+}

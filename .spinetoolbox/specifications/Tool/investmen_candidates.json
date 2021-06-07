@@ -1,0 +1,16 @@
+{
+    "name": "investmen_candidates",
+    "tooltype": "python",
+    "includes": [
+        "investment_candidates.py"
+    ],
+    "description": "Derives investment candidates from modeled flows and estimated capacities",
+    "inputfiles": [],
+    "inputfiles_opt": [],
+    "outputfiles": [
+        "Investment_candidates_SpineOpt_Nordic.xlsx"
+    ],
+    "cmdline_args": [],
+    "execute_in_work": true,
+    "includes_main_path": "../../.."
+}

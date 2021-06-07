@@ -1,0 +1,28 @@
+{
+    "item_type": "Exporter",
+    "output_format": "csv",
+    "name": "line_flows",
+    "description": "",
+    "mappings": {
+        "Mapping 1": {
+            "type": "object_default_parameter_values",
+            "mapping": [
+                {
+                    "map_type": "ObjectClass",
+                    "position": 0
+                },
+                {
+                    "map_type": "ParameterDefinition",
+                    "position": 1
+                },
+                {
+                    "map_type": "ParameterDefaultValue",
+                    "position": 2
+                }
+            ],
+            "enabled": true,
+            "always_export_header": true,
+            "use_fixed_table_name": false
+        }
+    }
+}

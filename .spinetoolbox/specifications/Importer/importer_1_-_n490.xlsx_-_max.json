@@ -294,8 +294,7 @@
                             },
                             {
                                 "map_type": "ParameterValue",
-                                "position": "hidden",
-                                "value": "1500"
+                                "position": 18
                             }
                         ]
                     }
@@ -936,8 +935,9 @@
                 "15": "string",
                 "16": "float",
                 "17": "float",
-                "18": "string",
-                "19": "string"
+                "18": "float",
+                "19": "string",
+                "20": "string"
             },
             "link": {
                 "0": "string",

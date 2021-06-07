@@ -1,0 +1,16 @@
+Could not import parameter value for '['Kerava', '6311']', class 'unit__to_node', parameter 'unit_capacity', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Harjavalta', '6329']', class 'unit__to_node', parameter 'unit_capacity', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Joutseno', '6318']', class 'unit__to_node', parameter 'unit_capacity', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Amager', '5531']', class 'unit__to_node', parameter 'unit_capacity', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Aros västerås', '7945']', class 'unit__to_node', parameter 'unit_capacity', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Naistenlahti', '6312']', class 'unit__to_node', parameter 'unit_capacity', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Värtan stockholm', '6362']', class 'unit__to_node', parameter 'unit_capacity', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Tokke', '6459']', class 'unit__to_node', parameter 'unit_capacity', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Kerava', '6311']', class 'unit__to_node', parameter 'vom_cost', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Harjavalta', '6329']', class 'unit__to_node', parameter 'vom_cost', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Joutseno', '6318']', class 'unit__to_node', parameter 'vom_cost', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Amager', '5531']', class 'unit__to_node', parameter 'vom_cost', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Aros västerås', '7945']', class 'unit__to_node', parameter 'vom_cost', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Naistenlahti', '6312']', class 'unit__to_node', parameter 'vom_cost', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Värtan stockholm', '6362']', class 'unit__to_node', parameter 'vom_cost', alternative Base: Duplicate parameter value, only first value will be considered.
+Could not import parameter value for '['Tokke', '6459']', class 'unit__to_node', parameter 'vom_cost', alternative Base: Duplicate parameter value, only first value will be considered.
