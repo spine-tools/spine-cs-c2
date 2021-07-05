@@ -3,6 +3,7 @@ using SpineOpt
 using Gurobi
 using JuMP
 using Cbc
+
 optimizer = optimizer_with_attributes(Gurobi.Optimizer, "OutputFlag" => 0, "MIPGap" => 1e-2)
 db_url_in = "sqlite:///C:\\Users\\u0138303\\Documents\\Spine_repos\\spine-cs-c2\\.spinetoolbox\\items\\input\\input.sqlite"
 db_url_out = "sqlite:///C:\\Users\\u0138303\\Documents\\Spine_repos\\spine-cs-c2\\.spinetoolbox\\items\\output\\output.sqlite"

@@ -12,5 +12,6 @@
     ],
     "cmdline_args": [],
     "execute_in_work": false,
-    "includes_main_path": "../../../../../Case Study C2/spatial-disaggregation"
+    "includes_main_path": "../../../../../Case Study C2/spatial-disaggregation",
+    "execution_settings": null
 }

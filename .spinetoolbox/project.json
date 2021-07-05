@@ -68,6 +68,11 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/specifications/Exporter/line_flow.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Exporter/nodal_prices.json"
                 }
             ]
         },
@@ -298,6 +303,16 @@
                     "output",
                     "left"
                 ]
+            },
+            {
+                "from": [
+                    "output",
+                    "bottom"
+                ],
+                "to": [
+                    "Nodal_Prices",
+                    "left"
+                ]
             }
         ]
     },
@@ -305,8 +320,8 @@
         "input": {
             "type": "Data Store",
             "description": "",
-            "x": -295.82797852418344,
-            "y": 184.5497532586956,
+            "x": -183.96599521718156,
+            "y": 86.45004438800413,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -324,8 +339,8 @@
         "output": {
             "type": "Data Store",
             "description": "",
-            "x": -35.65109094724044,
-            "y": 222.82423052330392,
+            "x": 27.874453177786982,
+            "y": 243.36447972990356,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -343,8 +358,8 @@
         "template": {
             "type": "Data Store",
             "description": "",
-            "x": -547.1839326271953,
-            "y": -247.88364100114262,
+            "x": -557.544510469024,
+            "y": -371.5781707952187,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -362,8 +377,8 @@
         "small system": {
             "type": "Data Store",
             "description": "",
-            "x": -275.36097160941677,
-            "y": -337.477215354784,
+            "x": -285.72154945124544,
+            "y": -461.17174514886005,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -381,8 +396,8 @@
         "invest": {
             "type": "Data Store",
             "description": "",
-            "x": 290.34571891313533,
-            "y": -142.27228670126405,
+            "x": 279.98514107130666,
+            "y": -265.96681649534014,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -400,15 +415,15 @@
         "wind_scenarios": {
             "type": "Data Connection",
             "description": "",
-            "x": -680.7394620213581,
-            "y": 137.8646014714571,
+            "x": -691.1000398631868,
+            "y": 14.170071677381031,
             "references": []
         },
         "N490": {
             "type": "Tool",
             "description": "",
-            "x": -746.0171357783418,
-            "y": -133.07179548738773,
+            "x": -756.3777136201704,
+            "y": -256.76632528146376,
             "specification": "n490",
             "execute_in_work": false,
             "cmd_line_args": []
@@ -416,8 +431,8 @@
         "SpineOpt": {
             "type": "Tool",
             "description": "",
-            "x": -118.7506838976418,
-            "y": 341.5447844048467,
+            "x": -102.01946146124357,
+            "y": 282.5611632923392,
             "specification": "spineopt",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -437,8 +452,8 @@
         "Load template 1": {
             "type": "Tool",
             "description": "",
-            "x": -686.652896934517,
-            "y": -246.50130233067637,
+            "x": -697.0134747763457,
+            "y": -370.1958321247524,
             "specification": "Load template",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -451,8 +466,8 @@
         "frac_demand": {
             "type": "Tool",
             "description": "",
-            "x": -663.4180107499452,
-            "y": 3.044694177357968,
+            "x": -673.7785885917739,
+            "y": -120.6498356167181,
             "specification": "fractional_p_wind",
             "execute_in_work": true,
             "cmd_line_args": [
@@ -465,8 +480,8 @@
         "plot1": {
             "type": "Tool",
             "description": "",
-            "x": 747.0975107611844,
-            "y": 109.72178416038301,
+            "x": 736.7369329193557,
+            "y": -13.972745633693052,
             "specification": "plts",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -479,8 +494,8 @@
         "plot2": {
             "type": "Tool",
             "description": "",
-            "x": 751.2382914619993,
-            "y": 263.46725678781274,
+            "x": 740.8777136201707,
+            "y": 139.77272699373668,
             "specification": "unit_plt",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -493,8 +508,8 @@
         "investmen_candidates 1": {
             "type": "Tool",
             "description": "",
-            "x": 201.41894279479013,
-            "y": -45.494060692389496,
+            "x": 191.05836495296145,
+            "y": -169.18859048646556,
             "specification": "investmen_candidates",
             "execute_in_work": true,
             "cmd_line_args": [
@@ -508,20 +523,11 @@
                 }
             ]
         },
-        "test run_spineopt": {
-            "type": "Tool",
-            "description": "",
-            "x": 733.722050969071,
-            "y": -306.4401949377168,
-            "specification": "test run_spineopt",
-            "execute_in_work": true,
-            "cmd_line_args": []
-        },
         "Importer 1": {
             "type": "Importer",
             "description": "",
-            "x": -540.5920300801283,
-            "y": -98.43017419455886,
+            "x": -471.96133744380336,
+            "y": 156.36303542592847,
             "specification": "Importer 1 - N490.xlsx - max",
             "cancel_on_error": false,
             "file_selection": [
@@ -534,8 +540,8 @@
         "Importer 2": {
             "type": "Importer",
             "description": "",
-            "x": -545.5234776674974,
-            "y": 124.34893847783474,
+            "x": -555.8840555093261,
+            "y": 0.6544086837586747,
             "specification": "wind_ts_alt",
             "cancel_on_error": false,
             "file_selection": [
@@ -548,8 +554,8 @@
         "Importer 3": {
             "type": "Importer",
             "description": "",
-            "x": -545.5656064046681,
-            "y": -1.348651237463649,
+            "x": -555.9261842464967,
+            "y": -125.04318103153972,
             "specification": "fractional_demand",
             "cancel_on_error": false,
             "file_selection": [
@@ -562,8 +568,8 @@
         "Exporter 1": {
             "type": "Exporter",
             "description": "",
-            "x": 596.2998685094931,
-            "y": -162.1278221384863,
+            "x": 585.9392906676644,
+            "y": -285.82235193256236,
             "databases": [],
             "output_time_stamps": false,
             "cancel_on_error": true,
@@ -572,8 +578,8 @@
         "Exporter 2": {
             "type": "Exporter",
             "description": "",
-            "x": 543.3064221515017,
-            "y": 58.40710526040141,
+            "x": 532.945844309673,
+            "y": -65.28742453367465,
             "databases": [],
             "output_time_stamps": false,
             "cancel_on_error": true,
@@ -582,8 +588,8 @@
         "line_flow 1": {
             "type": "Exporter",
             "description": "",
-            "x": 144.5163521931399,
-            "y": 236.18710182301697,
+            "x": 130.25676534350526,
+            "y": 124.18959905235874,
             "databases": [
                 {
                     "output_file_name": "line_flow.csv",
@@ -602,8 +608,8 @@
         "input 1": {
             "type": "Data Store",
             "description": "",
-            "x": 381.3174555218334,
-            "y": -329.00212207762274,
+            "x": 370.9568776800047,
+            "y": -452.6966518716988,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -621,8 +627,8 @@
         "SpineOpt 1": {
             "type": "Tool",
             "description": "",
-            "x": 396.9719164903246,
-            "y": 289.4531519745839,
+            "x": 386.6113386484959,
+            "y": 165.7586221805078,
             "specification": "spineopt",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -638,6 +644,26 @@
             "options": {
                 "julia_sysimage": ""
             }
+        },
+        "Nodal_Prices": {
+            "type": "Exporter",
+            "description": "",
+            "x": 244.2416532330967,
+            "y": 292.1769309704334,
+            "databases": [
+                {
+                    "output_file_name": "nodal_prices.csv",
+                    "database_url": {
+                        "type": "file_url",
+                        "relative": true,
+                        "path": ".spinetoolbox/items/output/output.sqlite",
+                        "scheme": "sqlite"
+                    }
+                }
+            ],
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "specification": "nodal_prices"
         }
     }
 }
