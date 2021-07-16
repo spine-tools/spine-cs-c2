@@ -1,14 +1,13 @@
 import pandas as pd
 import sys 
 
-test = sys.argv[0]
-print(test)
+line_flow_path, N490_path = sys.argv[1], sys.argv[2]
 ##Read the data files
 #File containing line capacities (and a lot of other stuff) from N490 model
-lines_n490 = pd.read_excel(r'C:\Users\u0138303\Documents\Case Study C2\spatial-disaggregation\N490.xlsx',sheet_name='line').set_index('line_id')
+lines_n490 = pd.read_excel(N490_path,sheet_name='line').set_index('line_id')
 
 #File containing line flows as calculated by SpineOpt
-line_flows = pd.read_csv(r'C:\Users\u0138303\Documents\Spine_repos\spine-cs-c2\.spinetoolbox\items\line_flow_1\output\line_flow.csv',names=['Line','Time','Flow','Node','Direction','Scenario'])
+line_flows = pd.read_csv(line_flow_path ,names=['Line','Time','Flow','Node','Direction','Scenario'])
 line_flows =  line_flows[line_flows.Line != 'new_one']#Removal of unwanted lines
 line_flows = line_flows[line_flows.Line != 'new_two']#Removal of unwanted lines
 

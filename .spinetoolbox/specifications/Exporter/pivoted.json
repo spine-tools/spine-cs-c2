@@ -61,6 +61,10 @@
                     "position": "hidden"
                 },
                 {
+                    "map_type": "IndexName",
+                    "position": "hidden"
+                },
+                {
                     "map_type": "ParameterValueIndex",
                     "position": 1,
                     "header": "time"
