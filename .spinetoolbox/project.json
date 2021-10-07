@@ -34,6 +34,11 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/specifications/Tool/invest_candidates.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/format_invested_lines.json"
                 }
             ],
             "Importer": [
@@ -61,6 +66,16 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/specifications/Importer/candidates_to_invest_import.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Importer/candidates_as_new.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Importer/no_candidates_to_invest_import.json"
                 }
             ],
             "Exporter": [
@@ -73,74 +88,22 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/specifications/Exporter/line_flow.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Exporter/invested.json"
                 }
             ]
         },
         "connections": [
             {
                 "from": [
-                    "Importer 1",
-                    "right"
-                ],
-                "to": [
-                    "input",
-                    "left"
-                ]
-            },
-            {
-                "from": [
                     "template",
                     "right"
                 ],
                 "to": [
-                    "input",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "Load template 1",
-                    "right"
-                ],
-                "to": [
-                    "template",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "input",
-                    "right"
-                ],
-                "to": [
-                    "SpineOpt",
-                    "left"
-                ],
-                "resource_filters": {
-                    "db_url@input": {
-                        "scenario_filter": [
-                            1
-                        ]
-                    }
-                }
-            },
-            {
-                "from": [
-                    "N490",
-                    "bottom"
-                ],
-                "to": [
-                    "frac_demand",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "N490",
-                    "right"
-                ],
-                "to": [
-                    "Importer 1",
+                    "input op",
                     "left"
                 ]
             },
@@ -150,57 +113,7 @@
                     "right"
                 ],
                 "to": [
-                    "Importer 2",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "frac_demand",
-                    "right"
-                ],
-                "to": [
-                    "Importer 3",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "Importer 3",
-                    "right"
-                ],
-                "to": [
-                    "input",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "Importer 2",
-                    "right"
-                ],
-                "to": [
-                    "input",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "Exporter 1",
-                    "right"
-                ],
-                "to": [
-                    "plot1",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "Exporter 2",
-                    "right"
-                ],
-                "to": [
-                    "plot2",
+                    "Import wind scenarios",
                     "left"
                 ]
             },
@@ -210,17 +123,17 @@
                     "right"
                 ],
                 "to": [
-                    "investmen_candidates 1",
+                    "Select candidates",
                     "left"
                 ]
             },
             {
                 "from": [
-                    "Importer 3",
+                    "Import fract demand",
                     "right"
                 ],
                 "to": [
-                    "input 1",
+                    "Input op+inv",
                     "left"
                 ]
             },
@@ -230,67 +143,55 @@
                     "right"
                 ],
                 "to": [
-                    "input 1",
+                    "Input op+inv",
                     "left"
                 ]
             },
             {
                 "from": [
-                    "invest",
+                    "Input op+inv",
                     "right"
                 ],
                 "to": [
-                    "input 1",
+                    "SpineOpt 2",
+                    "left"
+                ],
+                "resource_filters": {
+                    "db_url@Input op+inv": {
+                        "scenario_filter": [
+                            1,
+                            2
+                        ]
+                    }
+                }
+            },
+            {
+                "from": [
+                    "N490",
+                    "right"
+                ],
+                "to": [
+                    "Import op data + line caps",
                     "left"
                 ]
             },
             {
                 "from": [
-                    "input 1",
+                    "Import op data + line caps",
                     "right"
                 ],
                 "to": [
-                    "SpineOpt 1",
+                    "Input op+inv",
                     "left"
                 ]
             },
             {
                 "from": [
-                    "SpineOpt",
+                    "Import wind scenarios",
                     "right"
                 ],
                 "to": [
-                    "output",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "line_flow 1",
-                    "left"
-                ],
-                "to": [
-                    "investmen_candidates 1",
-                    "right"
-                ]
-            },
-            {
-                "from": [
-                    "candidates_to_invest",
-                    "right"
-                ],
-                "to": [
-                    "invest",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "investmen_candidates 1",
-                    "right"
-                ],
-                "to": [
-                    "candidates_to_invest",
+                    "Input op+inv",
                     "left"
                 ]
             },
@@ -300,76 +201,219 @@
                     "right"
                 ],
                 "to": [
-                    "Importer 4",
+                    "compute fract demand",
                     "left"
                 ]
             },
             {
                 "from": [
-                    "Importer 4",
+                    "compute fract demand",
                     "right"
                 ],
                 "to": [
-                    "input 1",
+                    "Import fract demand",
                     "left"
                 ]
             },
             {
                 "from": [
-                    "output",
+                    "output op",
                     "right"
                 ],
                 "to": [
-                    "line_flow 1",
+                    "Export line flows",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Candidate lines",
+                    "right"
+                ],
+                "to": [
+                    "Input op+inv",
                     "bottom"
                 ]
+            },
+            {
+                "from": [
+                    "N490",
+                    "bottom"
+                ],
+                "to": [
+                    "Import op data",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Import op data",
+                    "right"
+                ],
+                "to": [
+                    "input op",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "input op",
+                    "right"
+                ],
+                "to": [
+                    "SpineOpt",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "SpineOpt",
+                    "right"
+                ],
+                "to": [
+                    "output op",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Select candidates",
+                    "left"
+                ],
+                "to": [
+                    "Import candidates",
+                    "bottom"
+                ]
+            },
+            {
+                "from": [
+                    "Import candidates",
+                    "left"
+                ],
+                "to": [
+                    "Candidate lines",
+                    "bottom"
+                ]
+            },
+            {
+                "from": [
+                    "Export line flows",
+                    "right"
+                ],
+                "to": [
+                    "Select candidates",
+                    "bottom"
+                ]
+            },
+            {
+                "from": [
+                    "SpineOpt 2",
+                    "right"
+                ],
+                "to": [
+                    "Output op+inv",
+                    "bottom"
+                ]
+            },
+            {
+                "from": [
+                    "Investment template",
+                    "bottom"
+                ],
+                "to": [
+                    "Input op+inv",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Output op+inv",
+                    "right"
+                ],
+                "to": [
+                    "Exporter 1",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Importer 1",
+                    "right"
+                ],
+                "to": [
+                    "Data Store 1",
+                    "bottom"
+                ]
+            },
+            {
+                "from": [
+                    "Select candidates",
+                    "right"
+                ],
+                "to": [
+                    "Importer 1",
+                    "bottom"
+                ]
+            },
+            {
+                "from": [
+                    "Input op+inv",
+                    "right"
+                ],
+                "to": [
+                    "Data Store 1",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Exporter 1",
+                    "bottom"
+                ],
+                "to": [
+                    "Tool 1",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "Importer 2",
+                    "left"
+                ],
+                "to": [
+                    "Data Store 1",
+                    "right"
+                ]
+            },
+            {
+                "from": [
+                    "Tool 1",
+                    "bottom"
+                ],
+                "to": [
+                    "Importer 2",
+                    "right"
+                ]
+            },
+            {
+                "from": [
+                    "N490",
+                    "right"
+                ],
+                "to": [
+                    "Tool 1",
+                    "left"
+                ]
             }
-        ]
+        ],
+        "jumps": []
     },
     "items": {
-        "input": {
-            "type": "Data Store",
-            "description": "",
-            "x": -382.23247890698866,
-            "y": 79.74332837806439,
-            "url": {
-                "dialect": "sqlite",
-                "username": "",
-                "password": "",
-                "host": "",
-                "port": "",
-                "database": {
-                    "type": "path",
-                    "relative": true,
-                    "path": ".spinetoolbox/items/input/input.sqlite"
-                }
-            },
-            "cancel_on_error": true
-        },
-        "output": {
-            "type": "Data Store",
-            "description": "",
-            "x": -137.53277277399104,
-            "y": 46.48313138749147,
-            "url": {
-                "dialect": "sqlite",
-                "username": "",
-                "password": "",
-                "host": "",
-                "port": "",
-                "database": {
-                    "type": "path",
-                    "relative": true,
-                    "path": ".spinetoolbox/items/output/output.sqlite"
-                }
-            },
-            "cancel_on_error": true
-        },
         "template": {
             "type": "Data Store",
             "description": "",
-            "x": -557.544510469024,
-            "y": -208.878661717657,
+            "x": -508.47856766307825,
+            "y": -195.9520951426254,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -384,56 +428,18 @@
             },
             "cancel_on_error": true
         },
-        "small system": {
-            "type": "Data Store",
-            "description": "",
-            "x": -420.2910983390041,
-            "y": -289.391200805927,
-            "url": {
-                "dialect": "sqlite",
-                "username": "",
-                "password": "",
-                "host": "",
-                "port": "",
-                "database": {
-                    "type": "path",
-                    "relative": true,
-                    "path": ".spinetoolbox/items/small_system/small system.sqlite"
-                }
-            },
-            "cancel_on_error": true
-        },
-        "invest": {
-            "type": "Data Store",
-            "description": "",
-            "x": -135.13370227202898,
-            "y": -207.14796632281673,
-            "url": {
-                "dialect": "sqlite",
-                "username": "",
-                "password": "",
-                "host": "",
-                "port": "",
-                "database": {
-                    "type": "path",
-                    "relative": true,
-                    "path": ".spinetoolbox/items/invest/invest.sqlite"
-                }
-            },
-            "cancel_on_error": true
-        },
         "wind_scenarios": {
             "type": "Data Connection",
             "description": "",
-            "x": -696.4413213283188,
-            "y": 157.28488204945856,
+            "x": -309.97278553428714,
+            "y": -245.13149450639364,
             "references": []
         },
         "N490": {
             "type": "Tool",
             "description": "",
-            "x": -756.3777136201704,
-            "y": -94.0668162039021,
+            "x": -619.8113349750613,
+            "y": -41.664922681366875,
             "specification": "n490",
             "execute_in_work": false,
             "cmd_line_args": []
@@ -441,43 +447,29 @@
         "SpineOpt": {
             "type": "Tool",
             "description": "",
-            "x": -256.26593557400855,
-            "y": 54.7248939891052,
+            "x": -198.2302817516245,
+            "y": 245.8654308520155,
             "specification": "spineopt",
             "execute_in_work": false,
             "cmd_line_args": [
                 {
                     "type": "resource",
-                    "arg": "db_url@input"
+                    "arg": "db_url@input op"
                 },
                 {
                     "type": "resource",
-                    "arg": "db_url@output"
+                    "arg": "db_url@output op"
                 }
             ],
             "options": {
                 "julia_sysimage": ""
             }
         },
-        "Load template 1": {
+        "compute fract demand": {
             "type": "Tool",
             "description": "",
-            "x": -697.0134747763457,
-            "y": -207.49632304719074,
-            "specification": "Load template",
-            "execute_in_work": false,
-            "cmd_line_args": [
-                {
-                    "type": "resource",
-                    "arg": "db_url@template"
-                }
-            ]
-        },
-        "frac_demand": {
-            "type": "Tool",
-            "description": "",
-            "x": -715.8724755821224,
-            "y": 60.585067406128836,
+            "x": -308.8653210646413,
+            "y": -113.92088961095915,
             "specification": "fractional_p_wind",
             "execute_in_work": true,
             "cmd_line_args": [
@@ -487,39 +479,63 @@
                 }
             ]
         },
-        "plot1": {
-            "type": "Tool",
+        "Import op data": {
+            "type": "Importer",
             "description": "",
-            "x": 200.57961212866618,
-            "y": 43.83416108900553,
-            "specification": "plts",
-            "execute_in_work": false,
-            "cmd_line_args": [
-                {
-                    "type": "resource",
-                    "arg": "avg_through_flow.csv"
-                }
+            "x": -560.0818662323215,
+            "y": 212.96243462767325,
+            "specification": "ImportN490no_conn_cap",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    "N490.xlsx",
+                    true
+                ]
             ]
         },
-        "plot2": {
-            "type": "Tool",
+        "input op": {
+            "type": "Data Store",
             "description": "",
-            "x": 202.51667662637828,
-            "y": 166.72760687299564,
-            "specification": "unit_plt",
-            "execute_in_work": false,
-            "cmd_line_args": [
-                {
-                    "type": "resource",
-                    "arg": "unit_flow.csv"
+            "x": -433.79606630265613,
+            "y": 227.32846632939328,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/input_op/input.sqlite"
                 }
-            ]
+            },
+            "cancel_on_error": true
         },
-        "investmen_candidates 1": {
+        "output op": {
+            "type": "Data Store",
+            "description": "",
+            "x": 37.76669531451353,
+            "y": 247.8950015481123,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/output_op/output.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "Select candidates": {
             "type": "Tool",
             "description": "",
-            "x": -412.8493440896456,
-            "y": -146.58536079210242,
+            "x": 281.60395266193035,
+            "y": 158.7275995611836,
             "specification": "invest_candidates",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -533,142 +549,11 @@
                 }
             ]
         },
-        "test run_spineopt": {
-            "type": "Tool",
-            "description": "",
-            "x": 57.48171714078114,
-            "y": -244.28966263865902,
-            "specification": "",
-            "execute_in_work": true,
-            "cmd_line_args": []
-        },
-        "Importer 1": {
+        "Import candidates": {
             "type": "Importer",
             "description": "",
-            "x": -577.9887206097065,
-            "y": -8.50464291238497,
-            "specification": "ImportN490no_conn_cap",
-            "cancel_on_error": false,
-            "file_selection": [
-                [
-                    "N490.xlsx",
-                    true
-                ]
-            ]
-        },
-        "Importer 2": {
-            "type": "Importer",
-            "description": "",
-            "x": -548.3494068596588,
-            "y": 183.4463141604333,
-            "specification": "wind_ts_alt",
-            "cancel_on_error": false,
-            "file_selection": [
-                [
-                    "scenarios.xlsx",
-                    true
-                ]
-            ]
-        },
-        "Importer 3": {
-            "type": "Importer",
-            "description": "",
-            "x": -554.7821218221603,
-            "y": 94.91426999984283,
-            "specification": "fractional_demand",
-            "cancel_on_error": false,
-            "file_selection": [
-                [
-                    "frac_demand.xlsx",
-                    true
-                ]
-            ]
-        },
-        "Exporter 1": {
-            "type": "Exporter",
-            "description": "",
-            "x": 69.61541570490033,
-            "y": 12.189620928344397,
-            "databases": [],
-            "output_time_stamps": false,
-            "cancel_on_error": true,
-            "specification": "unit_flow"
-        },
-        "Exporter 2": {
-            "type": "Exporter",
-            "description": "",
-            "x": 27.640550362423078,
-            "y": 120.33502196898789,
-            "databases": [],
-            "output_time_stamps": false,
-            "cancel_on_error": true,
-            "specification": "unit_flow"
-        },
-        "line_flow 1": {
-            "type": "Exporter",
-            "description": "",
-            "x": -52.198826379207794,
-            "y": -41.866347948677344,
-            "databases": [
-                {
-                    "output_file_name": "line_flow.csv",
-                    "database_url": {
-                        "type": "file_url",
-                        "relative": true,
-                        "path": ".spinetoolbox/items/output/output.sqlite",
-                        "scheme": "sqlite"
-                    }
-                }
-            ],
-            "output_time_stamps": false,
-            "cancel_on_error": true,
-            "specification": "line_flow"
-        },
-        "input 1": {
-            "type": "Data Store",
-            "description": "",
-            "x": 38.081157301686865,
-            "y": -121.46218269376612,
-            "url": {
-                "dialect": "sqlite",
-                "username": "",
-                "password": "",
-                "host": "",
-                "port": "",
-                "database": {
-                    "type": "path",
-                    "relative": true,
-                    "path": ".spinetoolbox/items/input/input.sqlite"
-                }
-            },
-            "cancel_on_error": true
-        },
-        "SpineOpt 1": {
-            "type": "Tool",
-            "description": "",
-            "x": 191.9840095697806,
-            "y": -79.02316662085231,
-            "specification": "spineopt",
-            "execute_in_work": false,
-            "cmd_line_args": [
-                {
-                    "type": "resource",
-                    "arg": "db_url@input"
-                },
-                {
-                    "type": "resource",
-                    "arg": "db_url@output"
-                }
-            ],
-            "options": {
-                "julia_sysimage": ""
-            }
-        },
-        "candidates_to_invest": {
-            "type": "Importer",
-            "description": "",
-            "x": -278.58475945092704,
-            "y": -206.3246358149659,
+            "x": 178.0433719529858,
+            "y": 72.9785998506658,
             "specification": "candidates_to_invest_import",
             "cancel_on_error": false,
             "file_selection": [
@@ -678,16 +563,246 @@
                 ]
             ]
         },
-        "Importer 4": {
+        "Candidate lines": {
+            "type": "Data Store",
+            "description": "",
+            "x": 38.349606593167714,
+            "y": -6.958526327550121,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/candidate_lines/invest.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "Input op+inv": {
+            "type": "Data Store",
+            "description": "",
+            "x": 132.61002929301668,
+            "y": -168.86880450024597,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/input_op+inv/Input op+inv.sqlite"
+                }
+            },
+            "cancel_on_error": true
+        },
+        "Output op+inv": {
+            "type": "Data Store",
+            "description": "",
+            "x": 370.9857259478325,
+            "y": -247.82399142174336,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/output_op+inv/Output op+inv.sqlite"
+                }
+            },
+            "cancel_on_error": false
+        },
+        "Import fract demand": {
             "type": "Importer",
             "description": "",
-            "x": -392.10193831340587,
-            "y": -40.625933054167405,
+            "x": -160.0018195778989,
+            "y": -117.79562277277016,
+            "specification": "fractional_demand",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    "frac_demand.xlsx",
+                    true
+                ]
+            ]
+        },
+        "Export line flows": {
+            "type": "Exporter",
+            "description": "",
+            "x": 180.19352238927485,
+            "y": 251.8239914217433,
+            "databases": [
+                {
+                    "output_file_name": "line_flow.csv",
+                    "database_url": {
+                        "type": "file_url",
+                        "relative": true,
+                        "path": ".spinetoolbox/items/output_op/output.sqlite",
+                        "scheme": "sqlite"
+                    }
+                }
+            ],
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "specification": "line_flow"
+        },
+        "SpineOpt 2": {
+            "type": "Tool",
+            "description": "",
+            "x": 272.26925912761936,
+            "y": -183.1424972165565,
+            "specification": "spineopt",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@Input op+inv"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@Output op+inv"
+                }
+            ],
+            "options": {
+                "julia_sysimage": ""
+            }
+        },
+        "Import wind scenarios": {
+            "type": "Importer",
+            "description": "",
+            "x": -160.47762654129508,
+            "y": -235.43676691707302,
+            "specification": "wind_ts_alt",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    "scenarios.xlsx",
+                    true
+                ]
+            ]
+        },
+        "Import op data + line caps": {
+            "type": "Importer",
+            "description": "",
+            "x": -157.4929154355204,
+            "y": -25.209303978765675,
             "specification": "ImportN490",
             "cancel_on_error": false,
             "file_selection": [
                 [
                     "N490.xlsx",
+                    true
+                ]
+            ]
+        },
+        "Investment template": {
+            "type": "Data Store",
+            "description": "",
+            "x": 44.80745896171905,
+            "y": -236.02376585619373,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/investment_template/Investment template.sqlite"
+                }
+            },
+            "cancel_on_error": false
+        },
+        "Data Store 1": {
+            "type": "Data Store",
+            "description": "",
+            "x": 452.15126612343806,
+            "y": 3.10755882985233,
+            "url": {
+                "dialect": "sqlite",
+                "username": "",
+                "password": "",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/data_store_1/Data Store 1.sqlite"
+                }
+            },
+            "cancel_on_error": false
+        },
+        "Importer 1": {
+            "type": "Importer",
+            "description": "",
+            "x": 368.54668205459,
+            "y": 75.04558849536959,
+            "specification": "candidates_as_new",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    "Investment_candidates_SpineOpt_Nordic.xlsx",
+                    true
+                ]
+            ]
+        },
+        "Exporter 1": {
+            "type": "Exporter",
+            "description": "",
+            "x": 496.07792904697897,
+            "y": -164.96865903554445,
+            "databases": [
+                {
+                    "output_file_name": "invested_lines.xlsx",
+                    "database_url": {
+                        "type": "file_url",
+                        "relative": true,
+                        "path": ".spinetoolbox/items/output_op+inv/Output op+inv.sqlite",
+                        "scheme": "sqlite"
+                    }
+                }
+            ],
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "specification": "invested"
+        },
+        "Tool 1": {
+            "type": "Tool",
+            "description": "",
+            "x": 604.3113349750612,
+            "y": -86.41215473290424,
+            "specification": "format_invested_lines",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "invested_lines.xlsx"
+                },
+                {
+                    "type": "resource",
+                    "arg": "N490.xlsx"
+                }
+            ]
+        },
+        "Importer 2": {
+            "type": "Importer",
+            "description": "",
+            "x": 553.6860322022485,
+            "y": 54.989553011848095,
+            "specification": "candidates_as_new",
+            "cancel_on_error": false,
+            "file_selection": [
+                [
+                    "Invested_lines_Nordic.xlsx",
                     true
                 ]
             ]

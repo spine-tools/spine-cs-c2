@@ -14,8 +14,8 @@
     "execute_in_work": false,
     "includes_main_path": "../../..",
     "execution_settings": {
-        "kernel_spec_name": "python-3.6",
         "env": "",
+        "kernel_spec_name": "python3",
         "use_jupyter_console": false,
         "executable": ""
     }

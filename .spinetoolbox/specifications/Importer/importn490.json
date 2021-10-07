@@ -285,7 +285,8 @@
                             },
                             {
                                 "map_type": "Alternative",
-                                "position": "hidden"
+                                "position": "hidden",
+                                "value": "Base"
                             },
                             {
                                 "map_type": "ParameterValueMetadata",
@@ -564,7 +565,7 @@
                             {
                                 "map_type": "ParameterValue",
                                 "position": "hidden",
-                                "value": "1500.0"
+                                "value": "3000.0::"
                             }
                         ]
                     }
