@@ -1,0 +1,75 @@
+{
+    "item_type": "Exporter",
+    "output_format": "csv",
+    "name": "invested",
+    "description": "",
+    "mappings": {
+        "Mapping 1": {
+            "type": "relationship_parameter_values",
+            "mapping": [
+                {
+                    "map_type": "RelationshipClass",
+                    "position": "hidden",
+                    "filter_re": "report__connection__stochastic_scenario",
+                    "group_fn": "sum"
+                },
+                {
+                    "map_type": "RelationshipClassObjectClass",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "RelationshipClassObjectClass",
+                    "position": "header"
+                },
+                {
+                    "map_type": "ParameterDefinition",
+                    "position": -1,
+                    "filter_re": "^(?!.*bound).*$"
+                },
+                {
+                    "map_type": "ParameterValueList",
+                    "position": "hidden",
+                    "ignorable": true
+                },
+                {
+                    "map_type": "Relationship",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "RelationshipObject",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "RelationshipObject",
+                    "position": 0,
+                    "header": "line_id"
+                },
+                {
+                    "map_type": "Alternative",
+                    "position": "hidden",
+                    "filter_re": "scen1__SpineOpt 2@2021-09-03T11:24:41"
+                },
+                {
+                    "map_type": "ParameterValueType",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "IndexName",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ParameterValueIndex",
+                    "position": "hidden"
+                },
+                {
+                    "map_type": "ExpandedValue",
+                    "position": 5,
+                    "filter_re": "1.0"
+                }
+            ],
+            "enabled": true,
+            "always_export_header": true,
+            "use_fixed_table_name": false
+        }
+    }
+}

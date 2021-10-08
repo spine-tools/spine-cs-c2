@@ -1,0 +1,24 @@
+{
+    "name": "format_invested_lines",
+    "tooltype": "python",
+    "includes": [
+        "format_invested_lines.py"
+    ],
+    "description": "",
+    "inputfiles": [
+        "invested_lines.xlsx"
+    ],
+    "inputfiles_opt": [],
+    "outputfiles": [
+        "Invested_lines_Nordic.xlsx"
+    ],
+    "cmdline_args": [],
+    "execute_in_work": true,
+    "includes_main_path": "../../..",
+    "execution_settings": {
+        "env": "",
+        "kernel_spec_name": "python2",
+        "use_jupyter_console": false,
+        "executable": ""
+    }
+}
