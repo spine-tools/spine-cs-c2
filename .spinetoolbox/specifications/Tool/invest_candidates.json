@@ -17,6 +17,7 @@
         "env": "",
         "kernel_spec_name": "python3",
         "use_jupyter_console": false,
-        "executable": ""
+        "executable": "",
+        "fail_on_stderror": true
     }
 }

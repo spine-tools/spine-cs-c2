@@ -46,5 +46,14 @@ rank = rank[:100]
 # Finally we pick the first 10 lines into a new DF for importing into a Spine DB
 selected_lines = lines_n490.loc[rank.index]
 selected_lines = selected_lines.rename(lambda x: str(x) + "_new", axis='index')
+investment_cost_per_km = {
+    380:  0.85 / 1.609344 * 380/345 * 1298000,
+    300:  0.85 / 1.609344 * 300/345 * 1298000,
+    220:  0.85 / 1.609344 * 220/230 * 927000,
+    132:  0.85 / 1.609344 * 130/230 * 927000
+}
+selected_lines['cost_per_km'] = selected_lines['Vbase'].replace(investment_cost_per_km)
+selected_lines['Price'] = selected_lines['cost_per_km']*selected_lines['length']/1000
+selected_lines.to_excel('Investment_candidates_SpineOpt_Nordic.xlsx')
 
 selected_lines.to_excel('Investment_candidates_SpineOpt_Nordic.xlsx')

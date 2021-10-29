@@ -289,6 +289,43 @@
                             }
                         ]
                     }
+                },
+                {
+                    "connection_price": {
+                        "mapping": [
+                            {
+                                "map_type": "ObjectClass",
+                                "position": "hidden",
+                                "value": "connection"
+                            },
+                            {
+                                "map_type": "Object",
+                                "position": 0
+                            },
+                            {
+                                "map_type": "ObjectMetadata",
+                                "position": "hidden"
+                            },
+                            {
+                                "map_type": "ParameterDefinition",
+                                "position": "hidden",
+                                "value": "connection_investment_cost"
+                            },
+                            {
+                                "map_type": "Alternative",
+                                "position": "hidden",
+                                "value": "Base"
+                            },
+                            {
+                                "map_type": "ParameterValueMetadata",
+                                "position": "hidden"
+                            },
+                            {
+                                "map_type": "ParameterValue",
+                                "position": 22
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -318,8 +355,10 @@
                 "16": "float",
                 "17": "float",
                 "18": "float",
-                "19": "string",
-                "20": "string"
+                "19": "float",
+                "20": "string",
+                "21": "float",
+                "22": "float"
             }
         },
         "table_row_types": {},

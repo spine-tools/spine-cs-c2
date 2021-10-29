@@ -14,9 +14,9 @@
     "execute_in_work": false,
     "includes_main_path": "../../../../../Case Study C2/spatial-disaggregation",
     "execution_settings": {
-        "kernel_spec_name": "python-3.6",
+        "kernel_spec_name": "",
         "env": "",
         "use_jupyter_console": false,
-        "executable": ""
+        "executable": "C:/Workdir/Programs/Miniconda/envs/spatial-disaggregation/python.exe"
     }
 }

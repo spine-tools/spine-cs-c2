@@ -404,6 +404,16 @@
                     "Tool 1",
                     "left"
                 ]
+            },
+            {
+                "from": [
+                    "Load template 1",
+                    "bottom"
+                ],
+                "to": [
+                    "template",
+                    "left"
+                ]
             }
         ],
         "jumps": []
@@ -413,7 +423,7 @@
             "type": "Data Store",
             "description": "",
             "x": -508.47856766307825,
-            "y": -195.9520951426254,
+            "y": 13.061476145605013,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -432,14 +442,14 @@
             "type": "Data Connection",
             "description": "",
             "x": -309.97278553428714,
-            "y": -245.13149450639364,
+            "y": -36.11792321816321,
             "references": []
         },
         "N490": {
             "type": "Tool",
             "description": "",
             "x": -619.8113349750613,
-            "y": -41.664922681366875,
+            "y": 167.34864860686355,
             "specification": "n490",
             "execute_in_work": false,
             "cmd_line_args": []
@@ -447,8 +457,8 @@
         "SpineOpt": {
             "type": "Tool",
             "description": "",
-            "x": -198.2302817516245,
-            "y": 245.8654308520155,
+            "x": -202.38976738832187,
+            "y": 463.65498696289563,
             "specification": "spineopt",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -469,7 +479,7 @@
             "type": "Tool",
             "description": "",
             "x": -308.8653210646413,
-            "y": -113.92088961095915,
+            "y": 95.09268167727127,
             "specification": "fractional_p_wind",
             "execute_in_work": true,
             "cmd_line_args": [
@@ -483,7 +493,7 @@
             "type": "Importer",
             "description": "",
             "x": -560.0818662323215,
-            "y": 212.96243462767325,
+            "y": 421.97600591590367,
             "specification": "ImportN490no_conn_cap",
             "cancel_on_error": false,
             "file_selection": [
@@ -496,8 +506,8 @@
         "input op": {
             "type": "Data Store",
             "description": "",
-            "x": -433.79606630265613,
-            "y": 227.32846632939328,
+            "x": -431.4878167096799,
+            "y": 438.6502872105999,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -516,7 +526,7 @@
             "type": "Data Store",
             "description": "",
             "x": 37.76669531451353,
-            "y": 247.8950015481123,
+            "y": 456.9085728363427,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -535,7 +545,7 @@
             "type": "Tool",
             "description": "",
             "x": 281.60395266193035,
-            "y": 158.7275995611836,
+            "y": 367.74117084941406,
             "specification": "invest_candidates",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -553,7 +563,7 @@
             "type": "Importer",
             "description": "",
             "x": 178.0433719529858,
-            "y": 72.9785998506658,
+            "y": 281.9921711388962,
             "specification": "candidates_to_invest_import",
             "cancel_on_error": false,
             "file_selection": [
@@ -567,7 +577,7 @@
             "type": "Data Store",
             "description": "",
             "x": 38.349606593167714,
-            "y": -6.958526327550121,
+            "y": 202.0550449606803,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -586,7 +596,7 @@
             "type": "Data Store",
             "description": "",
             "x": 132.61002929301668,
-            "y": -168.86880450024597,
+            "y": 40.14476678798445,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -605,7 +615,7 @@
             "type": "Data Store",
             "description": "",
             "x": 370.9857259478325,
-            "y": -247.82399142174336,
+            "y": -38.810420133512935,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -624,7 +634,7 @@
             "type": "Importer",
             "description": "",
             "x": -160.0018195778989,
-            "y": -117.79562277277016,
+            "y": 91.21794851546026,
             "specification": "fractional_demand",
             "cancel_on_error": false,
             "file_selection": [
@@ -638,7 +648,7 @@
             "type": "Exporter",
             "description": "",
             "x": 180.19352238927485,
-            "y": 251.8239914217433,
+            "y": 460.8375627099737,
             "databases": [
                 {
                     "output_file_name": "line_flow.csv",
@@ -658,7 +668,7 @@
             "type": "Tool",
             "description": "",
             "x": 272.26925912761936,
-            "y": -183.1424972165565,
+            "y": 25.871074071673917,
             "specification": "spineopt",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -679,7 +689,7 @@
             "type": "Importer",
             "description": "",
             "x": -160.47762654129508,
-            "y": -235.43676691707302,
+            "y": -26.423195628842592,
             "specification": "wind_ts_alt",
             "cancel_on_error": false,
             "file_selection": [
@@ -693,7 +703,7 @@
             "type": "Importer",
             "description": "",
             "x": -157.4929154355204,
-            "y": -25.209303978765675,
+            "y": 183.80426730946476,
             "specification": "ImportN490",
             "cancel_on_error": false,
             "file_selection": [
@@ -707,7 +717,7 @@
             "type": "Data Store",
             "description": "",
             "x": 44.80745896171905,
-            "y": -236.02376585619373,
+            "y": -27.01019456796331,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -726,7 +736,7 @@
             "type": "Data Store",
             "description": "",
             "x": 452.15126612343806,
-            "y": 3.10755882985233,
+            "y": 212.12113011808276,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -745,7 +755,7 @@
             "type": "Importer",
             "description": "",
             "x": 368.54668205459,
-            "y": 75.04558849536959,
+            "y": 284.0591597836,
             "specification": "candidates_as_new",
             "cancel_on_error": false,
             "file_selection": [
@@ -759,7 +769,7 @@
             "type": "Exporter",
             "description": "",
             "x": 496.07792904697897,
-            "y": -164.96865903554445,
+            "y": 44.044912252685975,
             "databases": [
                 {
                     "output_file_name": "invested_lines.xlsx",
@@ -779,7 +789,7 @@
             "type": "Tool",
             "description": "",
             "x": 604.3113349750612,
-            "y": -86.41215473290424,
+            "y": 122.60141655532618,
             "specification": "format_invested_lines",
             "execute_in_work": true,
             "cmd_line_args": [
@@ -797,7 +807,7 @@
             "type": "Importer",
             "description": "",
             "x": 553.6860322022485,
-            "y": 54.989553011848095,
+            "y": 264.0031243000785,
             "specification": "candidates_as_new",
             "cancel_on_error": false,
             "file_selection": [
@@ -806,6 +816,15 @@
                     true
                 ]
             ]
+        },
+        "Load template 1": {
+            "type": "Tool",
+            "description": "",
+            "x": -424.7179251076125,
+            "y": -451.33756270997367,
+            "specification": "Load template",
+            "execute_in_work": false,
+            "cmd_line_args": []
         }
     }
 }
