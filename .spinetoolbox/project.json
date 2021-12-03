@@ -432,8 +432,8 @@
         "SpineOpt": {
             "type": "Tool",
             "description": "",
-            "x": -195.42025973090813,
-            "y": 246.1154308520155,
+            "x": -191.9290721103604,
+            "y": 246.11543085201546,
             "specification": "spineopt",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -481,8 +481,8 @@
         "input op": {
             "type": "Data Store",
             "description": "",
-            "x": -430.98604428193977,
-            "y": 227.57846632939328,
+            "x": -390.8373866456412,
+            "y": 231.069653949941,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
