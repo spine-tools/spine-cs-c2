@@ -10,8 +10,7 @@
                 {
                     "map_type": "RelationshipClass",
                     "position": "hidden",
-                    "filter_re": "report__connection__stochastic_scenario",
-                    "group_fn": "sum"
+                    "filter_re": "report__connection__stochastic_scenario"
                 },
                 {
                     "map_type": "RelationshipClassObjectClass",
@@ -69,6 +68,7 @@
             ],
             "enabled": true,
             "always_export_header": true,
+            "group_fn": "sum",
             "use_fixed_table_name": false
         }
     }

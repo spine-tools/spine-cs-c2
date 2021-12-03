@@ -88,6 +88,7 @@
             ],
             "enabled": true,
             "always_export_header": true,
+            "group_fn": "no_group",
             "use_fixed_table_name": false
         }
     }

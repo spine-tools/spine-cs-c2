@@ -1386,16 +1386,19 @@
         "table_options": {
             "SE1": {
                 "header": true,
-                "column": 0
+                "column": 0,
+                "max_rows": -1
             },
             "SE2": {
-                "header": true
+                "header": true,
+                "max_rows": -1
             },
             "SE3": {
                 "header": true
             },
             "SE4": {
-                "header": true
+                "header": true,
+                "max_rows": -1
             },
             "DK1": {
                 "header": true
@@ -1406,7 +1409,8 @@
             "FI": {
                 "header": true,
                 "read_until_col": false,
-                "read_until_row": false
+                "read_until_row": false,
+                "max_rows": -1
             }
         },
         "table_types": {

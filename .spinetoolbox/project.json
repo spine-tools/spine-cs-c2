@@ -8,11 +8,6 @@
                 {
                     "type": "path",
                     "relative": true,
-                    "path": ".spinetoolbox/specifications/Tool/n490.json"
-                },
-                {
-                    "type": "path",
-                    "relative": true,
                     "path": ".spinetoolbox/specifications/Tool/spineopt.json"
                 },
                 {
@@ -119,16 +114,6 @@
             },
             {
                 "from": [
-                    "N490",
-                    "right"
-                ],
-                "to": [
-                    "Select candidates",
-                    "left"
-                ]
-            },
-            {
-                "from": [
                     "Import fract demand",
                     "right"
                 ],
@@ -159,21 +144,10 @@
                 "resource_filters": {
                     "db_url@Input op+inv": {
                         "scenario_filter": [
-                            1,
-                            2
+                            1
                         ]
                     }
                 }
-            },
-            {
-                "from": [
-                    "N490",
-                    "right"
-                ],
-                "to": [
-                    "Import op data + line caps",
-                    "left"
-                ]
             },
             {
                 "from": [
@@ -192,16 +166,6 @@
                 ],
                 "to": [
                     "Input op+inv",
-                    "left"
-                ]
-            },
-            {
-                "from": [
-                    "N490",
-                    "right"
-                ],
-                "to": [
-                    "compute fract demand",
                     "left"
                 ]
             },
@@ -233,16 +197,6 @@
                 "to": [
                     "Input op+inv",
                     "bottom"
-                ]
-            },
-            {
-                "from": [
-                    "N490",
-                    "bottom"
-                ],
-                "to": [
-                    "Import op data",
-                    "left"
                 ]
             },
             {
@@ -397,7 +351,47 @@
             },
             {
                 "from": [
-                    "N490",
+                    "N490data",
+                    "bottom"
+                ],
+                "to": [
+                    "Import op data",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "N490data",
+                    "right"
+                ],
+                "to": [
+                    "Select candidates",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "N490data",
+                    "right"
+                ],
+                "to": [
+                    "Import op data + line caps",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "N490data",
+                    "right"
+                ],
+                "to": [
+                    "compute fract demand",
+                    "left"
+                ]
+            },
+            {
+                "from": [
+                    "N490data",
                     "right"
                 ],
                 "to": [
@@ -412,8 +406,8 @@
         "template": {
             "type": "Data Store",
             "description": "",
-            "x": -508.47856766307825,
-            "y": -195.9520951426254,
+            "x": -505.6685456423619,
+            "y": -195.7020951426254,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -431,24 +425,15 @@
         "wind_scenarios": {
             "type": "Data Connection",
             "description": "",
-            "x": -309.97278553428714,
-            "y": -245.13149450639364,
+            "x": -307.1627635135708,
+            "y": -244.88149450639364,
             "references": []
-        },
-        "N490": {
-            "type": "Tool",
-            "description": "",
-            "x": -619.8113349750613,
-            "y": -41.664922681366875,
-            "specification": "n490",
-            "execute_in_work": false,
-            "cmd_line_args": []
         },
         "SpineOpt": {
             "type": "Tool",
             "description": "",
-            "x": -198.2302817516245,
-            "y": 245.8654308520155,
+            "x": -195.42025973090813,
+            "y": 246.1154308520155,
             "specification": "spineopt",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -468,27 +453,27 @@
         "compute fract demand": {
             "type": "Tool",
             "description": "",
-            "x": -308.8653210646413,
-            "y": -113.92088961095915,
+            "x": -306.05529904392495,
+            "y": -113.67088961095915,
             "specification": "fractional_p_wind",
             "execute_in_work": true,
             "cmd_line_args": [
                 {
                     "type": "resource",
-                    "arg": "N490.xlsx"
+                    "arg": "<N490data>/N490.xlsx"
                 }
             ]
         },
         "Import op data": {
             "type": "Importer",
             "description": "",
-            "x": -560.0818662323215,
-            "y": 212.96243462767325,
+            "x": -557.2718442116052,
+            "y": 213.21243462767325,
             "specification": "ImportN490no_conn_cap",
             "cancel_on_error": false,
             "file_selection": [
                 [
-                    "N490.xlsx",
+                    "<N490data>/N490.xlsx",
                     true
                 ]
             ]
@@ -496,8 +481,8 @@
         "input op": {
             "type": "Data Store",
             "description": "",
-            "x": -433.79606630265613,
-            "y": 227.32846632939328,
+            "x": -430.98604428193977,
+            "y": 227.57846632939328,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -515,8 +500,8 @@
         "output op": {
             "type": "Data Store",
             "description": "",
-            "x": 37.76669531451353,
-            "y": 247.8950015481123,
+            "x": 40.57671733522989,
+            "y": 248.1450015481123,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -534,8 +519,8 @@
         "Select candidates": {
             "type": "Tool",
             "description": "",
-            "x": 281.60395266193035,
-            "y": 158.7275995611836,
+            "x": 284.4139746826467,
+            "y": 158.9775995611836,
             "specification": "invest_candidates",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -545,15 +530,15 @@
                 },
                 {
                     "type": "resource",
-                    "arg": "N490.xlsx"
+                    "arg": "<N490data>/N490.xlsx"
                 }
             ]
         },
         "Import candidates": {
             "type": "Importer",
             "description": "",
-            "x": 178.0433719529858,
-            "y": 72.9785998506658,
+            "x": 180.85339397370217,
+            "y": 73.2285998506658,
             "specification": "candidates_to_invest_import",
             "cancel_on_error": false,
             "file_selection": [
@@ -566,8 +551,8 @@
         "Candidate lines": {
             "type": "Data Store",
             "description": "",
-            "x": 38.349606593167714,
-            "y": -6.958526327550121,
+            "x": 41.159628613884074,
+            "y": -6.708526327550121,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -585,8 +570,8 @@
         "Input op+inv": {
             "type": "Data Store",
             "description": "",
-            "x": 132.61002929301668,
-            "y": -168.86880450024597,
+            "x": 135.42005131373304,
+            "y": -168.61880450024597,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -604,8 +589,8 @@
         "Output op+inv": {
             "type": "Data Store",
             "description": "",
-            "x": 370.9857259478325,
-            "y": -247.82399142174336,
+            "x": 373.7957479685489,
+            "y": -247.57399142174336,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -623,8 +608,8 @@
         "Import fract demand": {
             "type": "Importer",
             "description": "",
-            "x": -160.0018195778989,
-            "y": -117.79562277277016,
+            "x": -157.19179755718255,
+            "y": -117.54562277277016,
             "specification": "fractional_demand",
             "cancel_on_error": false,
             "file_selection": [
@@ -637,8 +622,8 @@
         "Export line flows": {
             "type": "Exporter",
             "description": "",
-            "x": 180.19352238927485,
-            "y": 251.8239914217433,
+            "x": 183.0035444099912,
+            "y": 252.0739914217433,
             "databases": [
                 {
                     "output_file_name": "line_flow.csv",
@@ -657,8 +642,8 @@
         "SpineOpt 2": {
             "type": "Tool",
             "description": "",
-            "x": 272.26925912761936,
-            "y": -183.1424972165565,
+            "x": 275.0792811483357,
+            "y": -182.8924972165565,
             "specification": "spineopt",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -678,13 +663,13 @@
         "Import wind scenarios": {
             "type": "Importer",
             "description": "",
-            "x": -160.47762654129508,
-            "y": -235.43676691707302,
+            "x": -157.66760452057872,
+            "y": -235.18676691707302,
             "specification": "wind_ts_alt",
             "cancel_on_error": false,
             "file_selection": [
                 [
-                    "scenarios.xlsx",
+                    "<wind_scenarios>/scenarios.xlsx",
                     true
                 ]
             ]
@@ -692,13 +677,13 @@
         "Import op data + line caps": {
             "type": "Importer",
             "description": "",
-            "x": -157.4929154355204,
-            "y": -25.209303978765675,
+            "x": -154.68289341480403,
+            "y": -24.959303978765675,
             "specification": "ImportN490",
             "cancel_on_error": false,
             "file_selection": [
                 [
-                    "N490.xlsx",
+                    "<N490data>/N490.xlsx",
                     true
                 ]
             ]
@@ -706,8 +691,8 @@
         "Investment template": {
             "type": "Data Store",
             "description": "",
-            "x": 44.80745896171905,
-            "y": -236.02376585619373,
+            "x": 47.61748098243541,
+            "y": -235.77376585619373,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -725,8 +710,8 @@
         "Data Store 1": {
             "type": "Data Store",
             "description": "",
-            "x": 452.15126612343806,
-            "y": 3.10755882985233,
+            "x": 454.9612881441544,
+            "y": 3.35755882985233,
             "url": {
                 "dialect": "sqlite",
                 "username": "",
@@ -744,8 +729,8 @@
         "Importer 1": {
             "type": "Importer",
             "description": "",
-            "x": 368.54668205459,
-            "y": 75.04558849536959,
+            "x": 371.35670407530637,
+            "y": 75.29558849536959,
             "specification": "candidates_as_new",
             "cancel_on_error": false,
             "file_selection": [
@@ -758,8 +743,8 @@
         "Exporter 1": {
             "type": "Exporter",
             "description": "",
-            "x": 496.07792904697897,
-            "y": -164.96865903554445,
+            "x": 498.8879510676953,
+            "y": -164.71865903554445,
             "databases": [
                 {
                     "output_file_name": "invested_lines.xlsx",
@@ -778,8 +763,8 @@
         "Tool 1": {
             "type": "Tool",
             "description": "",
-            "x": 604.3113349750612,
-            "y": -86.41215473290424,
+            "x": 607.1213569957775,
+            "y": -86.16215473290424,
             "specification": "format_invested_lines",
             "execute_in_work": true,
             "cmd_line_args": [
@@ -789,15 +774,15 @@
                 },
                 {
                     "type": "resource",
-                    "arg": "N490.xlsx"
+                    "arg": "<N490data>/N490.xlsx"
                 }
             ]
         },
         "Importer 2": {
             "type": "Importer",
             "description": "",
-            "x": 553.6860322022485,
-            "y": 54.989553011848095,
+            "x": 556.4960542229649,
+            "y": 55.239553011848095,
             "specification": "candidates_as_new",
             "cancel_on_error": false,
             "file_selection": [
@@ -806,6 +791,13 @@
                     true
                 ]
             ]
+        },
+        "N490data": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -622.6213569957774,
+            "y": -53.22820246948883,
+            "references": []
         }
     }
 }
